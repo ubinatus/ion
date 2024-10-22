@@ -467,6 +467,10 @@ export class Service extends Component implements Link.Linkable {
                   protocol: forwardProtocol,
                   targetType: "ip",
                   vpcId: vpc.id,
+                  // TODO: This is hardcoded to SST as it lack this property in the schema.
+                  healthCheck: {
+                    path: "/api/liveness",
+                  },
                 },
                 { parent: self },
               ),
